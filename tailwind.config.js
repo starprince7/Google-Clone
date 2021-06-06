@@ -6,6 +6,9 @@ module.exports = {
     extend: {
       fontFamily: {
         montserrat: ['Montserrat']
+      },
+      fontSize: {
+        tiny: '13px'
       }
     },
   },

@@ -10,6 +10,6 @@
         @apply hover:underline cursor-pointer
     }
     .btn {
-        @apply mx-3 bg-gray-100 px-4 py-3 text-sm rounded-md hover:ring-1 ring-gray-300 mt-4
+        @apply mx-3 bg-[#f8f9fa] px-4 py-2 text-tiny rounded-md outline-none hover:ring-1 ring-gray-200 active:ring-blue-300 mt-4 hover:shadow-md
     }
 }
