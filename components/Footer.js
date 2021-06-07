@@ -2,8 +2,8 @@ import { LightningBoltIcon } from '@heroicons/react/outline'
 
 function Footer() {
     return (
-        <footer className="bg-gray-100 mt-auto text-tiny
-         text-gray-500 divide-y-[1px] w-full px-2
+        <footer className="bg-gray-100 mt-auto text-[11px]
+         sm:text-tiny text-gray-500 divide-y-[1px] w-full px-2
           divide-grey-300">
             <div className="px-8 py-4">
                 <p>Nigeria</p>

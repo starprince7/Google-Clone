@@ -10,6 +10,9 @@
         @apply hover:underline cursor-pointer
     }
     .btn {
-        @apply mx-3 bg-[#f8f9fa] px-4 py-2 text-tiny rounded-md outline-none hover:ring-1 ring-gray-200 active:ring-blue-300 mt-4 hover:shadow-md
+        @apply mx-1 sm:mx-3 bg-[#f8f9fa] text-black px-4 py-2 text-[12px] sm:text-tiny rounded-md outline-none hover:ring-1 ring-gray-200 active:ring-blue-300 mt-4 hover:shadow-md
+    }
+    .pagginated-btn {
+        @apply text-blue-800 hover:underline cursor-pointer text-sm space-y-1 mb-10
     }
 }
