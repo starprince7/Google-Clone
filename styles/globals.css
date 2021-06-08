@@ -7,10 +7,10 @@
 
 @layer components {
     .link {
-        @apply hover:underline cursor-pointer
+        @apply hover:underline cursor-pointer text-[11px] sm:text-tiny
     }
     .btn {
-        @apply mx-1 sm:mx-3 bg-[#f8f9fa] text-black px-4 py-2 text-[12px] sm:text-tiny rounded-md outline-none hover:ring-1 ring-gray-200 active:ring-blue-300 mt-4 hover:shadow-md
+        @apply font-medium mx-1 sm:mx-3 bg-[#f8f9fa] text-black px-4 py-2 text-[12px] sm:text-tiny rounded-md outline-none hover:ring-1 ring-gray-200 active:ring-blue-100 mt-4 hover:shadow-md
     }
     .pagginated-btn {
         @apply text-blue-800 hover:underline cursor-pointer text-sm space-y-1 mb-10

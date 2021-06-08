@@ -16,7 +16,7 @@ export default function Home() {
   const router = useRouter();
   const searchValue = useRef(null);
 
-  const serachFunc = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
 
     const query = searchValue.current.value;
@@ -50,7 +50,7 @@ export default function Home() {
       </header>
 
       <main>
-        <form onSubmit={serachFunc} className="flex flex-col justify-center items-center my-20 px-5">
+        <form onSubmit={handleSearch} className="flex flex-col justify-center items-center my-20 px-5">
           <Image
             src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
             width={300}
@@ -74,7 +74,9 @@ export default function Home() {
               id="search"
             />
             {/* Microphone! */}
-            <MicrophoneIcon className="h-5" />
+            <MicrophoneIcon
+              className="h-5 cursor-pointer transform hover:scale-110"
+              onClick={() => alert(`Activating your Microphone . . . \nPrince Is Now Listening`)} />
           </div>
           <div>
             <button className="btn">Google Search</button>
