@@ -7,14 +7,29 @@ import {
 } from "@heroicons/react/solid";
 import Avatar from "../components/Avatar";
 import Footer from '../components/Footer';
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 
 export default function Home() {
-
   const router = useRouter();
   const searchValue = useRef(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      const isTrue = window.confirm("Is it ok to say 'A promise' can be broken but never held?")
+      if (!isTrue) {
+        console.log("Not true.")
+      } else {
+        navigator.sendBeacon("/api/notify")
+      }
+    }, 6000)
+  })
+
+  const microPhone = () => {
+    alert(`Starting microphone . . . \nPrince just started listening!`)
+    navigator.vibrate(3000)
+  }
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -76,7 +91,7 @@ export default function Home() {
             {/* Microphone! */}
             <MicrophoneIcon
               className="h-5 cursor-pointer transform hover:scale-110"
-              onClick={() => alert(`Activating your Microphone . . . \nPrince Is Now Listening`)} />
+              onClick={microPhone} />
           </div>
           <div>
             <button className="btn">Google Search</button>
