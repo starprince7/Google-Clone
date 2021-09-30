@@ -36,7 +36,10 @@ export default function Home() {
         navigator.sendBeacon("/api/notify", txt)
       }
     }, 6000)
-  })
+    
+    // Focus on input on DOM mount
+    searchValue.current.focus();
+  }, [])
 
   const microPhone = () => {
     alert(`Starting microphone . . . \nPrince just started listening!`)
