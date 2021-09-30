@@ -16,7 +16,7 @@ export default (req, res) => {
         from: "rexxrandolph@gmail.com",
         to: "princeagezinweke@gmail.com",
         subject: "Google-Clone Alert!",
-        text:  "Someone just visited Google-clone project",
+        text: req.body,
       };
 
       transporter

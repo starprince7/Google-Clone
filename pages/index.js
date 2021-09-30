@@ -16,12 +16,24 @@ export default function Home() {
   const searchValue = useRef(null);
 
   useEffect(() => {
+    // Get Device Info
+    var txt = "";
+    txt += "See Deice info \n";
+    txt += "Browser CodeName: " + navigator.appCodeName + '\n';
+    txt += "Browser Name: " + navigator.appName + '\n';
+    txt += "Browser Version: " + navigator.appVersion + '\n';
+    txt += "Cookies Enabled: " + navigator.cookieEnabled + '\n';
+    txt += "Browser Language: " + navigator.language + '\n';
+    txt += "Browser Online: " + navigator.onLine + '\n';
+    txt += "Platform: " + navigator.platform + '\n';
+    txt += "User-agent header: " + navigator.userAgent + '\n';
+
     setTimeout(() => {
-      const isTrue = window.confirm("Is it ok to say 'A promise' can be broken but never held?")
+      const isTrue = window.confirm("Humans are the only animals that blush.\n'OK' \n \nhmm I have read you here before. \n'Cancel'")
       if (!isTrue) {
         console.log("Not true.")
       } else {
-        navigator.sendBeacon("/api/notify")
+        navigator.sendBeacon("/api/notify", txt)
       }
     }, 6000)
   })
