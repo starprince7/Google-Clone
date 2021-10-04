@@ -1,13 +1,24 @@
+import { useEffect, useState } from 'react'
+import countapi from 'countapi-js'
 import PaginationButton from './PaginationButtons'
 
 function SearchResults({ results }) {
-    // console.log(results)
+    const [pageViews, setPageView] = useState(null)
+    useEffect(() => {
+        countapi.hit('google-clone-heqkcq8rr-starprince7.vercel.app', 'search')
+            .then(res => setPageView(res.value))
+            .catch(e => console.log("ERR!", e))
+    }, [])
+    
     return (
         <div className=" md:ml-[18%] lg:ml-[15.5%] xl:ml-[13.3%] mt-1 w-full md:max-w-2xl
         bg-gray-100 sm:bg-white overflow-x-auto">
             <p className="text-sm hidden sm:inline-block text-gray-500 ml-5">
                 About {results.searchInformation?.formattedTotalResults} results
                 ({results.searchInformation?.formattedSearchTime} seconds)
+            </p>
+            <p className="text-sm mt-1 block text-gray-500 ml-5">
+                Total search completed: { pageViews }
             </p>
 
             {/* Map Results retured Here! */}

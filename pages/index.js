@@ -7,18 +7,25 @@ import {
 } from "@heroicons/react/solid";
 import Avatar from "../components/Avatar";
 import Footer from '../components/Footer';
-import { useRef, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import countapi from 'countapi-js'
 
 
 export default function Home() {
   const router = useRouter();
   const searchValue = useRef(null);
+  const [pageViews, setPageView] = useState(null)
+  
+  useEffect(() => {
+    countapi.visits('google-clone-heqkcq8rr-starprince7.vercel.app')
+      .then(res => setPageView(res.value))
+  }, [])
 
   useEffect(() => {
     // Get Device Info
     var txt = "";
-    txt += "See Deice info \n";
+    txt += "New Visitor's Device info \n";
     txt += "Browser CodeName: " + navigator.appCodeName + '\n';
     txt += "Browser Name: " + navigator.appName + '\n';
     txt += "Browser Version: " + navigator.appVersion + '\n';
@@ -29,7 +36,7 @@ export default function Home() {
     txt += "User-agent header: " + navigator.userAgent + '\n';
 
     setTimeout(() => {
-      const isTrue = window.confirm("Humans are the only animals that blush.\n'OK' \n \nhmm I have read you here before. \n'Cancel'")
+      const isTrue = window.confirm("Humans are the only animals that blush.\nyes - OK \n \nhmm, I have read this here before. \n'Cancel'")
       if (!isTrue) {
         console.log("Not true.")
       } else {
@@ -43,7 +50,7 @@ export default function Home() {
 
   const microPhone = () => {
     alert(`Starting microphone . . . \nPrince just started listening!`)
-    navigator.vibrate(3000)
+    navigator.vibrate(2000)
   }
 
   const handleSearch = (e) => {
@@ -69,7 +76,7 @@ export default function Home() {
       <header className="flex justify-between items-center text-gray-700 p-2 sm:px-5 sm:py-3 text-tiny">
         <div className="flex space-x-3">
           <p className="link">About</p>
-          <p className="link">Store</p>
+          <p className="link">Page visits: <strong>{ pageViews }</strong></p>
         </div>
         <div className="flex space-x-3 items-center">
           <p className="link">Gmail</p>

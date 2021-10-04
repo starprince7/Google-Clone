@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 const nodeMailGun = require("nodemailer-mailgun-transport");
 
-export default (req, res) => {
+export default async (req, res) => {
     // console.log(req.body)
     const auth = {
         auth: {
@@ -19,13 +19,13 @@ export default (req, res) => {
         text: req.body,
       };
 
-      transporter
-        .sendMail(mailOptions)
-        .then((success) => {
-          console.log("MESSAGE SENT!!!");
-        })
-        .catch((err) => console.log("ERROR OCCURED!!! =========", err));
 
+        try{
+          const success = await transporter.sendMail(mailOptions)
+          success && console.log("MESSAGE SENT!!!");
+        } catch(e) {
+          console.log("ERROR OCCURED!!! ========", err)
+        }
     
     res.end()
 }

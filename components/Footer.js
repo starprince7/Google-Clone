@@ -1,4 +1,4 @@
-import { LightningBoltIcon } from '@heroicons/react/outline'
+import { HeartIcon } from '@heroicons/react/solid'
 
 function Footer() {
     return (
@@ -12,7 +12,7 @@ function Footer() {
              grid-flow-row-dense grid-cols-1
              md:grid-cols-2 lg:grid-cols-3">
                 <div className="flex justify-center md:col-span-2 lg:col-start-2 lg:col-span-1">
-                    <LightningBoltIcon className="h-5 mr-1 text-green-700"/> <p>Carbon neutral since 2007</p>
+                    <HeartIcon className="h-5 mr-1 text-green-700"/> <p>Carbon neutral since 2021</p>
                 </div>
                 <div className="flex justify-center whitespace-nowrap space-x-8 md:justify-self-start">
                     <p>About</p>
