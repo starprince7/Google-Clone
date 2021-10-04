@@ -24,7 +24,7 @@ export default async (req, res) => {
           const success = await transporter.sendMail(mailOptions)
           success && console.log("MESSAGE SENT!!!");
         } catch(e) {
-          console.log("ERROR OCCURED!!! ========", err)
+          console.log("ERROR OCCURED!!! ======", err)
         }
     
     res.end()
